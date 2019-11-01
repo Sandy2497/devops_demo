@@ -1,8 +1,7 @@
 #access_key = ""
 #secret_key = ""
-region = "us-east-2"
+region = "us-east-1"
 instance_type = "t2.micro"
-ami = "ami-0520e698dd500b1d1"
+ami = "ami-0c322300a1dd5dc79"
 associate_public_ip_address = "true"
-subnet_id =  "subnet-66a1da1c"
-my_public_subnets = ["subnet-38242950", "subnet-66a1da1c"]
+subnet_id =  "subnet-c5e884fb"
