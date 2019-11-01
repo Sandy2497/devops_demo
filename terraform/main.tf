@@ -6,7 +6,7 @@ provider "aws" {
 }
 
 data "aws_subnet_ids" "example" {
-  vpc_id = "vpc-b7997cdc"
+  vpc_id = "vpc-79ccb903"
 }
 
 data "aws_subnet" "example" {
@@ -20,11 +20,6 @@ resource "aws_lb" "test-lb" {
   internal = false
   load_balancer_type = "application"
 subnet_id = "${element(data.aws_subnet_ids.example.ids)}"
-#subnet_id     = "${var.subnet_id}"  
-#subnets        = ["${var.my_public_subnets.*.id}"]
-#subnets     = "subnet1"
-# security_groups    = ["${aws_security_group.lb_sg.id}"]  
-#associate_public_ip_address = "${var.associate_public_ip_address}"
 }
 
 resource "aws_lb_target_group_attachment" "test" {
@@ -42,7 +37,7 @@ resource "aws_lb_target_group" "test" {
   port     = 80
   protocol = "HTTP"
   target_type = "instance"
-  vpc_id   = "vpc-b7997cdc"
+  vpc_id   = "vpc-79ccb903"
 depends_on = [aws_instance.test-inst]
 }
 
