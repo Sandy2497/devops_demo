@@ -6,4 +6,8 @@
       state: latest
     notify:
       - start httpd
-    when: ansible_distribution == 'CentOS'
+
+  - name: Template a file to /var/www/html/index.html
+    template:
+      src: index.html
+      dest: /var/www/html/index.html
